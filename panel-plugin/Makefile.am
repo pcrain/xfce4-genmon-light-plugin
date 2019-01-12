@@ -1,22 +1,22 @@
 plugindir = $(libdir)/xfce4/panel/plugins
-plugin_LTLIBRARIES = libgenmon.la
+plugin_LTLIBRARIES = libgenmonlight.la
 
-libgenmon_la_CFLAGS =						\
+libgenmonlight_la_CFLAGS =						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"			\
 	@LIBXFCE4PANEL_CFLAGS@					\
 	@LIBXFCE4UI_CFLAGS@
 
-libgenmon_la_LDFLAGS = 						\
+libgenmonlight_la_LDFLAGS = 						\
 	-avoid-version 						\
 	-module 						\
 	-no-undefined 						\
 	-export-symbols-regex '^xfce_panel_module_(preinit|init|construct)'
 
-libgenmon_la_LIBADD =						\
+libgenmonlight_la_LIBADD =						\
 	@LIBXFCE4PANEL_LIBS@					\
 	@LIBXFCE4UI_LIBS@
 
-libgenmon_la_SOURCES =		\
+libgenmonlight_la_SOURCES =		\
 	main.c			\
 	config_gui.h		\
 	config_gui.c		\
@@ -24,11 +24,11 @@ libgenmon_la_SOURCES =		\
 	cmdspawn.c
 
 desktopdir = $(datadir)/xfce4/panel/plugins
-desktop_DATA = genmon.desktop
+desktop_DATA = genmonlight.desktop
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST = 								\
-	genmon.desktop.in
+	genmonlight.desktop.in
 
 DISTCLEANFILES =							\
 	$(desktop_DATA)
